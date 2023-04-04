@@ -1,17 +1,18 @@
 spring:
   profiles:
     active: dev
+    include: API-KEY
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://127.0.0.1:3306/gram_dev?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
-    username: likelion3
-    password: 2017150011
+    username: ${mariaUsername}
+    password: ${mariaPassword}
   security:
     oauth2:
       client:
         registration:
           kakao:
-            clientId: 1b21d589319c31290780dd41b43dd1f3
+            clientId: ${kakaoKey}
             scope:
             client-name: Kakao
             authorization-grant-type: authorization_code
